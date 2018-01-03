@@ -1,4 +1,0 @@
-from random import randint
-def main():
-	die = randint(1,6)
-return die

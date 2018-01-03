@@ -4,30 +4,33 @@
 import sys
 from random import randint
 
-guess = randint(1,100)
+
+def guess():
+    print ("-------------------------------------")
+    print "Guess a number between 1 and 500"
+    print ("-------------------------------------")
+
 
 #check if input is integer
-def checkInput():
+def check_input():
+    guess = randint(1,50)
+    userguess = int(raw_input("Guess: "))
     try:
-        userguess = int(raw_input("Guess a number: "))
+        if userguess > guess:
+            print "Too high"
+        elif userguess < guess:
+            print "Too low"
+        elif userguess == guess:
+            print "Correct guess"
     except:
         print "Err: Input should be integer"
-        
-        
 
-    if userguess > guess:
-        print "Too high"
-    elif userguess < guess:
-        print "Too low"
-    elif userguess == guess:
-        print "Correct guess"
+    
 
-        
+guess()        
 while True:
-    try:
-        checkInput()
-    except:
-        break
+        check_input()
+
 
     
         
